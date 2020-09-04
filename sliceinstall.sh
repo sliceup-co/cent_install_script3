@@ -194,7 +194,7 @@
 	sudo chown postgres /home/postgresdata
 	sudo chgrp postgres /home/postgresdata
 	sudo chmod og-xr /home/postgresdata
-	sudo sed -i "s/data_directory = 'ConfigDir'/data_directory = '\/home\/postgresdata'/" /var/lib/pgsql/10/data/postgresql.conf
+	sudo sed -i "s/#data_directory = 'ConfigDir'/data_directory = '\/home\/postgresdata'/" /var/lib/pgsql/10/data/postgresql.conf
     #end move of postgres data structure
     
     

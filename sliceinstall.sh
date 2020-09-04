@@ -188,15 +188,7 @@
     sudo yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm -y
     sudo yum install postgresql10-server postgresql10-contrib postgresql10-devel -y
     sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
-    
-    #begin move of postgres Data structure
-	sudo mkdir /home/postgresdata
-	sudo chown postgres /home/postgresdata
-	sudo chgrp postgres /home/postgresdata
-	sudo chmod og-xr /home/postgresdata
-	sudo sed -i "s/#data_directory = 'ConfigDir'/data_directory = '\/home\/postgresdata'/" /var/lib/pgsql/10/data/postgresql.conf
-    #end move of postgres data structure
-    
+        
     
     sudo systemctl start postgresql-10
     sudo systemctl enable postgresql-10
